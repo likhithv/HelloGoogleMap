@@ -8,20 +8,20 @@
       var div = document.getElementById("map_canvas");
 
       // Create a Google Maps native view under the map_canvas div.
-      //var map = plugin.google.maps.Map.getMap(div);
+      var map = plugin.google.maps.Map.getMap(div);
 
       
-      // In the following example, markers appear when the user clicks on the map.
+		// In the following example, markers appear when the user clicks on the map.
 		// Each marker is labeled with a single alphabetical character.
 		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		var labelIndex = 0;
 
 		function initialize() {
 		  var bangalore = { lat: 12.97, lng: 77.59 };
-		  var map = plugin.google.maps.Map.getMap(div);, {
-			zoom: 12,
-			center: bangalore
-		  });
+		  <!-- var map = new google.maps.Map(document.getElementById('map'), { -->
+			<!-- zoom: 12, -->
+			<!-- center: bangalore -->
+		  <!-- }); -->
 
 		  // This event listener calls addMarker() when the map is clicked.
 		  google.maps.event.addListener(map, 'click', function(event) {
@@ -45,6 +45,7 @@
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 
+	});
     </script>
     <style type="text/css">
     html, body {
