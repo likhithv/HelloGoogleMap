@@ -52,7 +52,7 @@
 		  map.one(plugin.google.maps.event.MAP_READY, onMapInit);
 		  
 		  plugin.google.maps.event.addListener(map, 'click', function(event) {
-			addMarker(event.latLng, map);
+			onClickMarker(event.latLng, map);
 		  });
 		});
 
