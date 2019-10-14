@@ -51,7 +51,7 @@
 		  // You have to wait the MAP_READY event.
 		  map.one(plugin.google.maps.event.MAP_READY, onMapInit);
 		  
-		  map.event.addListener(map, 'click', function(event) {
+		  plugin.google.maps.event.addListener(map, 'click', function(event) {
 			addMarker(event.latLng, map);
 		  });
 		});
