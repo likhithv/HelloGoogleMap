@@ -50,14 +50,36 @@
 
 		  // You have to wait the MAP_READY event.
 		  map.one(plugin.google.maps.event.MAP_READY, onMapInit);
+		  
+		  map.event.addListener(map, 'click', function(event) {
+			addMarker(event.latLng, map);
+		  });
 		});
+
+
+		function onClickMarker(newLoc, map) {
+
+		  // Add a marker
+		  map.addMarker({
+			'position': newLoc,
+			'title': "This is the new location!",
+			'animation': plugin.google.maps.Animation.BOUNCE
+		  }, function(marker) {
+
+			// Show the infoWindow
+			marker.showInfoWindow();
+
+		  });
+		}
+
 
 		function onMapInit(map) {
 
 		  // Add a marker
 		  map.addMarker({
 			'position': MyLoc,
-			'title': "Hello GoogleMap for Cordova!"
+			'title': "Hello GoogleMap for Cordova!",
+			'animation': plugin.google.maps.Animation.BOUNCE
 		  }, function(marker) {
 
 			// Show the infoWindow
