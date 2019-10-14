@@ -10,11 +10,8 @@
       // Create a Google Maps native view under the map_canvas div.
       var map = plugin.google.maps.Map.getMap(div);
 
-      // If you click the button, do something...
-      var button = document.getElementById("button");
-      button.addEventListener("click", function() {
-
-        // Move to the position with animation
+      
+      // Move to the position with animation
         map.animateCamera({
           target: {lat: 17.450573, lng: 78.425564},
           zoom: 18,
@@ -36,6 +33,13 @@
         marker.showInfoWindow();
 
       });
+      
+      
+      // If you click the button, do something...
+      var button = document.getElementById("button");
+      button.addEventListener("click", function() {
+
+        
 
     }, false);
 
